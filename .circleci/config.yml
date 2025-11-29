@@ -1,11 +1,13 @@
 version: 2.1
 
 orbs:
-  android: circleci/android@0.2.1
+  android: circleci/android@2.0
 
 jobs:
   build:
-    executor: android/android
+    executor:
+      name: android/android-docker
+      tag: 2024.01.1
     steps:
       - checkout
       - restore_cache:
