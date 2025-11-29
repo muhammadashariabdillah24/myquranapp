@@ -68,6 +68,7 @@ Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/andro
 > Task :core:kspDebugKotlin
 > Task :core:compileReleaseKotlin
 > Task :core:compileDebugKotlin
+> Task :core:javaPreCompileRelease
 > Task :core:compileDebugJavaWithJavac
 > Task :core:bundleLibRuntimeToJarDebug
 > Task :core:processDebugJavaRes
@@ -154,20 +155,19 @@ Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/andro
 > Task :app:mergeLibDexDebug
 > Task :app:mergeProjectDexDebug
 > Task :app:mergeDebugJniLibFolders
-> Task :search:compileDebugKotlin
 > Task :app:mergeDebugNativeLibs
-> Task :search:compileDebugJavaWithJavac
-> Task :search:dexBuilderDebug
-> Task :search:featureGlobalSyntheticsDebugMerge
 
 > Task :app:stripDebugDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
 
-> Task :app:mergeDebugGlobalSynthetics
+> Task :search:compileDebugKotlin
 > Task :app:validateSigningDebug
+> Task :search:compileDebugJavaWithJavac
+> Task :search:dexBuilderDebug
+> Task :search:featureGlobalSyntheticsDebugMerge
 > Task :app:writeDebugAppMetadata
+> Task :app:mergeDebugGlobalSynthetics
 > Task :app:writeDebugSigningConfigVersions
-> Task :core:javaPreCompileRelease
 > Task :core:compileReleaseJavaWithJavac
 > Task :core:extractProguardFiles
 > Task :core:processReleaseManifest
@@ -231,10 +231,10 @@ Unable to strip the following libraries, packaging them as they are: libdatastor
 > Task :app:stripReleaseDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
 
+> Task :app:extractReleaseNativeSymbolTables
 > Task :favorite:mergeReleaseNativeLibs NO-SOURCE
 > Task :favorite:stripReleaseDebugSymbols NO-SOURCE
 > Task :favorite:extractReleaseNativeSymbolTables NO-SOURCE
-> Task :app:extractReleaseNativeSymbolTables
 > Task :search:mergeReleaseNativeLibs NO-SOURCE
 > Task :search:stripReleaseDebugSymbols NO-SOURCE
 > Task :search:extractReleaseNativeSymbolTables NO-SOURCE
@@ -276,13 +276,7 @@ Unable to strip the following libraries, packaging them as they are: libdatastor
 > Task :search:checkReleaseAarMetadata
 > Task :search:mapReleaseSourceSetPaths
 > Task :search:processReleaseManifestForPackage
-> Task :app:mergeReleaseResources
 > Task :app:checkReleaseDuplicateClasses
-> Task :app:packageReleaseResources
-> Task :app:compileReleaseNavigationResources
-> Task :app:parseReleaseLocalResources
-> Task :favorite:mergeReleaseResources
-> Task :app:dataBindingGenBaseClassesRelease
 > Task :app:mergeReleaseArtProfile
 > Task :app:mergeReleaseStartupProfile
 > Task :app:mergeReleaseShaders
@@ -290,7 +284,13 @@ Unable to strip the following libraries, packaging them as they are: libdatastor
 > Task :app:generateReleaseAssets UP-TO-DATE
 > Task :app:mergeReleaseAssets
 > Task :app:compressReleaseAssets
+> Task :app:mergeReleaseResources
 > Task :app:extractReleaseVersionControlInfo
+> Task :app:packageReleaseResources
+> Task :app:compileReleaseNavigationResources
+> Task :app:parseReleaseLocalResources
+> Task :favorite:mergeReleaseResources
+> Task :app:dataBindingGenBaseClassesRelease
 > Task :core:syncReleaseLibJars
 > Task :core:bundleReleaseLocalLintAar
 > Task :app:processReleaseResources
@@ -300,43 +300,23 @@ Unable to strip the following libraries, packaging them as they are: libdatastor
 > Task :favorite:dataBindingGenBaseClassesRelease
 > Task :favorite:compileReleaseNavigationResources
 > Task :favorite:processReleaseResources
-The message received from the daemon indicates that the daemon has disappeared.
-Build request sent: Build{id=96657db5-de33-4f73-963e-b409ea95f598, currentDir=/home/circleci/project}
-Attempting to read last messages from the daemon log...
-Daemon pid: 218
-  log file: /home/circleci/.gradle/daemon/8.13/daemon-218.out.log
------ Last 20 lines from daemon log file - daemon-218.out.log -----
-2025-11-29T04:56:57.690+0000 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 218). The daemon log file: /home/circleci/.gradle/daemon/8.13/daemon-218.out.log
-2025-11-29T04:56:57.691+0000 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting 2nd build in daemon [uptime: 1 mins 39.81 secs, performance: 99%, GC rate: 0.00/s, heap usage: 0% of 2 GiB]
-2025-11-29T04:56:57.691+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
-2025-11-29T04:56:57.691+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=a8c8ff47-1f04-4947-95c8-9094a2c73c2c,javaHome=/usr/lib/jvm/java-17-openjdk-amd64,javaVersion=17,javaVendor=Private Build,daemonRegistryDir=/home/circleci/.gradle/daemon,pid=218,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
-Checking the license for package Android SDK Build-Tools 35 in /home/circleci/android-sdk/licenses
-License for package Android SDK Build-Tools 35 accepted.
-Preparing "Install Android SDK Build-Tools 35 v.35.0.0".
-"Install Android SDK Build-Tools 35 v.35.0.0" ready.
-Installing Android SDK Build-Tools 35 in /home/circleci/android-sdk/build-tools/35.0.0
-"Install Android SDK Build-Tools 35 v.35.0.0" complete.
-"Install Android SDK Build-Tools 35 v.35.0.0" finished.
-Checking the license for package Android SDK Platform 36 in /home/circleci/android-sdk/licenses
-License for package Android SDK Platform 36 accepted.
-Preparing "Install Android SDK Platform 36 (revision 2)".
-"Install Android SDK Platform 36 (revision 2)" ready.
-Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/android-36
-"Install Android SDK Platform 36 (revision 2)" complete.
-"Install Android SDK Platform 36 (revision 2)" finished.
-Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
-Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.----- End of the daemon log -----
-
+> Task :favorite:compileReleaseKotlin
+> Task :favorite:compileReleaseJavaWithJavac
+> Task :favorite:mergeReleaseGeneratedProguardFiles
+> Task :favorite:exportReleaseConsumerProguardFiles FAILED
+> Task :core:lintVitalAnalyzeRelease
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+Execution failed for task ':favorite:exportReleaseConsumerProguardFiles'.
+> Default file proguard-android-optimize.txt should not be specified in this module. It can be specified in the base module instead.
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
 > Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
-> Task :core:lintVitalAnalyzeRelease
-> Task :favorite:compileReleaseKotlin
+
+BUILD FAILED in 3m 46s
+253 actionable tasks: 253 executed
