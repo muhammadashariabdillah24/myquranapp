@@ -1,0 +1,342 @@
+Checking the license for package Android SDK Build-Tools 35 in /home/circleci/android-sdk/licenses
+License for package Android SDK Build-Tools 35 accepted.
+Preparing "Install Android SDK Build-Tools 35 v.35.0.0".
+"Install Android SDK Build-Tools 35 v.35.0.0" ready.
+Installing Android SDK Build-Tools 35 in /home/circleci/android-sdk/build-tools/35.0.0
+"Install Android SDK Build-Tools 35 v.35.0.0" complete.
+"Install Android SDK Build-Tools 35 v.35.0.0" finished.
+Checking the license for package Android SDK Platform 36 in /home/circleci/android-sdk/licenses
+License for package Android SDK Platform 36 accepted.
+Preparing "Install Android SDK Platform 36 (revision 2)".
+"Install Android SDK Platform 36 (revision 2)" ready.
+Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/android-36
+"Install Android SDK Platform 36 (revision 2)" complete.
+"Install Android SDK Platform 36 (revision 2)" finished.
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:preBuild UP-TO-DATE
+> Task :core:preDebugBuild UP-TO-DATE
+> Task :core:generateDebugResValues
+> Task :core:dataBindingMergeDependencyArtifactsDebug
+> Task :core:generateDebugResources
+> Task :core:packageDebugResources
+> Task :core:processDebugNavigationResources
+> Task :core:generateDebugBuildConfig
+> Task :core:parseDebugLocalResources
+> Task :core:javaPreCompileDebug
+> Task :core:dataBindingGenBaseClassesDebug
+> Task :app:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:writeDebugAarMetadata
+> Task :core:generateDebugRFile
+> Task :core:extractDeepLinksDebug
+> Task :core:processDebugManifest
+> Task :favorite:preBuild UP-TO-DATE
+> Task :favorite:preDebugBuild UP-TO-DATE
+> Task :favorite:featureDebugWriter
+> Task :search:preBuild UP-TO-DATE
+> Task :search:preDebugBuild UP-TO-DATE
+> Task :search:featureDebugWriter
+> Task :favorite:generateDebugResValues
+> Task :search:generateDebugResValues
+> Task :core:compileDebugLibraryResources
+> Task :core:mergeDebugShaders
+> Task :core:compileDebugShaders NO-SOURCE
+> Task :core:generateDebugAssets UP-TO-DATE
+> Task :core:mergeDebugAssets
+> Task :favorite:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :favorite:generateDebugResources
+> Task :favorite:packageDebugResources
+> Task :favorite:javaPreCompileDebug
+> Task :search:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :search:generateDebugResources
+> Task :search:packageDebugResources
+> Task :search:javaPreCompileDebug
+> Task :core:mergeDebugJniLibFolders
+> Task :core:mergeDebugNativeLibs NO-SOURCE
+> Task :core:copyDebugJniLibsProjectOnly
+> Task :core:preReleaseBuild UP-TO-DATE
+> Task :core:dataBindingMergeDependencyArtifactsRelease
+> Task :core:generateReleaseResValues
+> Task :core:generateReleaseResources
+> Task :core:packageReleaseResources
+> Task :core:processReleaseNavigationResources
+> Task :core:parseReleaseLocalResources
+> Task :core:dataBindingGenBaseClassesRelease
+> Task :core:generateReleaseBuildConfig
+> Task :core:generateReleaseRFile
+> Task :core:kspReleaseKotlin
+> Task :core:kspDebugKotlin
+> Task :core:compileReleaseKotlin
+> Task :core:compileDebugKotlin
+> Task :core:compileDebugJavaWithJavac
+> Task :core:bundleLibRuntimeToJarDebug
+> Task :core:processDebugJavaRes
+> Task :core:createFullJarDebug
+> Task :app:generateDebugFeatureTransitiveDeps
+> Task :favorite:generateDebugFeatureTransitiveDeps
+> Task :search:generateDebugFeatureTransitiveDeps
+> Task :app:checkDebugLibraries
+> Task :app:preDebugBuild
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+> Task :app:generateDebugResValues
+> Task :app:generateDebugResources
+> Task :app:mergeDebugResources
+> Task :app:packageDebugResources
+> Task :app:processDebugNavigationResources
+> Task :app:parseDebugLocalResources
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :app:generateDebugBuildConfig
+> Task :app:checkDebugAarMetadata
+> Task :app:compileDebugNavigationResources
+> Task :app:mapDebugSourceSetPaths
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:writeDebugModuleMetadata
+> Task :app:generateDebugFeatureMetadata
+> Task :favorite:extractDeepLinksDebug
+> Task :favorite:processDebugMainManifest
+> Task :favorite:copyDebugMergedManifest
+> Task :favorite:processApplicationManifestDebugForBundle
+> Task :favorite:processManifestDebugForFeature
+> Task :search:extractDeepLinksDebug
+> Task :search:processDebugMainManifest
+> Task :search:copyDebugMergedManifest
+> Task :search:processApplicationManifestDebugForBundle
+> Task :search:processManifestDebugForFeature
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :core:bundleLibCompileToJarDebug
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:processDebugResources
+> Task :app:desugarDebugFileDependencies
+> Task :favorite:desugarDebugFileDependencies
+> Task :favorite:dataBindingMergeDependencyArtifactsDebug
+> Task :favorite:mergeDebugResources
+> Task :favorite:processDebugNavigationResources
+> Task :favorite:parseDebugLocalResources
+> Task :favorite:dataBindingGenBaseClassesDebug
+> Task :favorite:checkDebugAarMetadata
+> Task :favorite:compileDebugNavigationResources
+> Task :favorite:mapDebugSourceSetPaths
+> Task :favorite:processDebugManifestForPackage
+> Task :favorite:processDebugResources
+> Task :search:desugarDebugFileDependencies
+> Task :search:dataBindingMergeDependencyArtifactsDebug
+> Task :search:mergeDebugResources
+> Task :search:processDebugNavigationResources
+> Task :search:parseDebugLocalResources
+> Task :search:dataBindingGenBaseClassesDebug
+> Task :search:checkDebugAarMetadata
+> Task :search:compileDebugNavigationResources
+> Task :search:mapDebugSourceSetPaths
+> Task :search:processDebugManifestForPackage
+> Task :search:processDebugResources
+> Task :app:checkDebugDuplicateClasses
+> Task :app:compileDebugKotlin
+> Task :app:mergeExtDexDebug
+> Task :app:compileDebugJavaWithJavac
+> Task :app:dexBuilderDebug
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :favorite:compileDebugKotlin
+> Task :favorite:compileDebugJavaWithJavac
+> Task :favorite:dexBuilderDebug
+> Task :favorite:featureGlobalSyntheticsDebugMerge
+> Task :app:processDebugJavaRes
+> Task :app:mergeDebugJavaResource
+> Task :app:mergeLibDexDebug
+> Task :app:mergeProjectDexDebug
+> Task :app:mergeDebugJniLibFolders
+> Task :search:compileDebugKotlin
+> Task :app:mergeDebugNativeLibs
+> Task :search:compileDebugJavaWithJavac
+> Task :search:dexBuilderDebug
+> Task :search:featureGlobalSyntheticsDebugMerge
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
+
+> Task :app:mergeDebugGlobalSynthetics
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :core:javaPreCompileRelease
+> Task :core:compileReleaseJavaWithJavac
+> Task :core:extractProguardFiles
+> Task :core:processReleaseManifest
+> Task :core:generateReleaseLibraryProguardRules
+> Task :core:mergeReleaseGeneratedProguardFiles
+> Task :core:processReleaseJavaRes
+> Task :core:mergeReleaseJavaResource
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+> Task :core:mergeReleaseJniLibFolders
+> Task :core:mergeReleaseNativeLibs NO-SOURCE
+> Task :core:copyReleaseJniLibsProjectOnly
+> Task :favorite:preReleaseBuild UP-TO-DATE
+> Task :favorite:mergeReleaseJniLibFolders
+> Task :search:preReleaseBuild UP-TO-DATE
+> Task :search:mergeReleaseJniLibFolders
+> Task :core:exportReleaseConsumerProguardFiles
+> Task :favorite:extractProguardFiles
+> Task :app:buildKotlinToolingMetadata
+> Task :core:writeReleaseAarMetadata
+> Task :core:extractDeepLinksRelease
+> Task :favorite:featureReleaseWriter
+> Task :search:featureReleaseWriter
+> Task :favorite:generateReleaseResValues
+> Task :search:generateReleaseResValues
+> Task :core:compileReleaseLibraryResources
+> Task :core:bundleLibCompileToJarRelease
+> Task :favorite:generateReleaseResources
+> Task :favorite:packageReleaseResources
+> Task :favorite:javaPreCompileRelease
+> Task :search:extractProguardFiles
+> Task :search:generateReleaseResources
+> Task :search:packageReleaseResources
+> Task :search:javaPreCompileRelease
+> Task :core:prepareReleaseArtProfile
+> Task :app:extractProguardFiles
+> Task :core:mergeReleaseShaders
+> Task :core:compileReleaseShaders NO-SOURCE
+> Task :core:generateReleaseAssets UP-TO-DATE
+> Task :core:mergeReleaseAssets
+> Task :core:generateReleaseLintModel
+> Task :core:prepareLintJarForPublish
+> Task :core:checkReleaseAarMetadata
+> Task :core:stripReleaseDebugSymbols NO-SOURCE
+> Task :core:copyReleaseJniLibsProjectAndLocalJars
+> Task :core:extractDeepLinksForAarRelease
+> Task :core:minifyReleaseWithR8
+> Task :core:extractReleaseAnnotations
+> Task :core:bundleLibRuntimeToJarRelease
+> Task :core:mergeReleaseConsumerProguardFiles
+> Task :core:createFullJarRelease
+> Task :app:generateReleaseFeatureTransitiveDeps
+> Task :favorite:generateReleaseFeatureTransitiveDeps
+> Task :search:generateReleaseFeatureTransitiveDeps
+> Task :app:checkReleaseLibraries
+> Task :app:preReleaseBuild
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:mergeReleaseNativeLibs
+
+> Task :app:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
+
+> Task :favorite:mergeReleaseNativeLibs NO-SOURCE
+> Task :favorite:stripReleaseDebugSymbols NO-SOURCE
+> Task :favorite:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:extractReleaseNativeSymbolTables
+> Task :search:mergeReleaseNativeLibs NO-SOURCE
+> Task :search:stripReleaseDebugSymbols NO-SOURCE
+> Task :search:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:writeReleaseModuleMetadata
+> Task :app:dataBindingMergeDependencyArtifactsRelease
+> Task :app:generateReleaseResValues
+> Task :app:generateReleaseResources
+> Task :app:processReleaseNavigationResources
+> Task :app:generateReleaseBuildConfig
+> Task :app:checkReleaseAarMetadata
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+> Task :app:generateReleaseFeatureMetadata
+> Task :favorite:extractDeepLinksRelease
+> Task :favorite:processReleaseMainManifest
+> Task :favorite:copyReleaseMergedManifest
+> Task :favorite:processApplicationManifestReleaseForBundle
+> Task :favorite:processManifestReleaseForFeature
+> Task :search:extractDeepLinksRelease
+> Task :search:processReleaseMainManifest
+> Task :search:copyReleaseMergedManifest
+> Task :search:processApplicationManifestReleaseForBundle
+> Task :search:processManifestReleaseForFeature
+> Task :app:processReleaseMainManifest
+> Task :app:processReleaseManifest
+> Task :app:processReleaseManifestForPackage
+> Task :app:javaPreCompileRelease
+> Task :favorite:dataBindingMergeDependencyArtifactsRelease
+> Task :favorite:processReleaseNavigationResources
+> Task :favorite:parseReleaseLocalResources
+> Task :favorite:checkReleaseAarMetadata
+> Task :favorite:mapReleaseSourceSetPaths
+> Task :favorite:processReleaseManifestForPackage
+> Task :search:dataBindingMergeDependencyArtifactsRelease
+> Task :search:processReleaseNavigationResources
+> Task :search:parseReleaseLocalResources
+> Task :search:checkReleaseAarMetadata
+> Task :search:mapReleaseSourceSetPaths
+> Task :search:processReleaseManifestForPackage
+> Task :app:mergeReleaseResources
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:packageReleaseResources
+> Task :app:compileReleaseNavigationResources
+> Task :app:parseReleaseLocalResources
+> Task :favorite:mergeReleaseResources
+> Task :app:dataBindingGenBaseClassesRelease
+> Task :app:mergeReleaseArtProfile
+> Task :app:mergeReleaseStartupProfile
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:compressReleaseAssets
+> Task :app:extractReleaseVersionControlInfo
+> Task :core:syncReleaseLibJars
+> Task :core:bundleReleaseLocalLintAar
+> Task :app:processReleaseResources
+> Task :app:compileReleaseKotlin
+> Task :app:compileReleaseJavaWithJavac
+> Task :app:bundleReleaseClassesToCompileJar
+> Task :favorite:dataBindingGenBaseClassesRelease
+> Task :favorite:compileReleaseNavigationResources
+> Task :favorite:processReleaseResources
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=96657db5-de33-4f73-963e-b409ea95f598, currentDir=/home/circleci/project}
+Attempting to read last messages from the daemon log...
+Daemon pid: 218
+  log file: /home/circleci/.gradle/daemon/8.13/daemon-218.out.log
+----- Last 20 lines from daemon log file - daemon-218.out.log -----
+2025-11-29T04:56:57.690+0000 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 218). The daemon log file: /home/circleci/.gradle/daemon/8.13/daemon-218.out.log
+2025-11-29T04:56:57.691+0000 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting 2nd build in daemon [uptime: 1 mins 39.81 secs, performance: 99%, GC rate: 0.00/s, heap usage: 0% of 2 GiB]
+2025-11-29T04:56:57.691+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2025-11-29T04:56:57.691+0000 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=a8c8ff47-1f04-4947-95c8-9094a2c73c2c,javaHome=/usr/lib/jvm/java-17-openjdk-amd64,javaVersion=17,javaVendor=Private Build,daemonRegistryDir=/home/circleci/.gradle/daemon,pid=218,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-Xmx2048m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Checking the license for package Android SDK Build-Tools 35 in /home/circleci/android-sdk/licenses
+License for package Android SDK Build-Tools 35 accepted.
+Preparing "Install Android SDK Build-Tools 35 v.35.0.0".
+"Install Android SDK Build-Tools 35 v.35.0.0" ready.
+Installing Android SDK Build-Tools 35 in /home/circleci/android-sdk/build-tools/35.0.0
+"Install Android SDK Build-Tools 35 v.35.0.0" complete.
+"Install Android SDK Build-Tools 35 v.35.0.0" finished.
+Checking the license for package Android SDK Platform 36 in /home/circleci/android-sdk/licenses
+License for package Android SDK Platform 36 accepted.
+Preparing "Install Android SDK Platform 36 (revision 2)".
+"Install Android SDK Platform 36 (revision 2)" ready.
+Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/android-36
+"Install Android SDK Platform 36 (revision 2)" complete.
+"Install Android SDK Platform 36 (revision 2)" finished.
+Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
+Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.----- End of the daemon log -----
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+> Task :core:lintVitalAnalyzeRelease
+> Task :favorite:compileReleaseKotlin
