@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">My Quran</string>
+    
+    <!-- Main Menu -->
+    <string name="menu_home">Home</string>
+    <string name="menu_surah">Surah</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_settings">Settings</string>
+    
+    <!-- Surah List -->
+    <string name="surah_list_title">Al-Quran</string>
+    <string name="search_hint">Search Surah...</string>
+    <string name="search_surah">Search Surah</string>
+    <string name="ayah_count">%d Ayahs</string>
+    <string name="surah_type_meccan">Meccan</string>
+    <string name="surah_type_medinan">Medinan</string>
+    
+    <!-- Surah Detail -->
+    <string name="bismillah">Bismillah</string>
+    <string name="ayah_number">Ayah %d</string>
+    <string name="juz_info" formatted="false">Juz %d • Page %d</string>
+    <string name="surah_info_format" formatted="false">%1$s • %2$d Ayahs • %3$s</string>
+    
+    <!-- Favorite -->
+    <string name="favorite_title">Favorite Surahs</string>
+    <string name="empty_favorite">No favorite surahs yet</string>
+    <string name="add_to_favorite">Add to Favorite</string>
+    <string name="remove_from_favorite">Remove from Favorite</string>
+    
+    <!-- Search -->
+    <string name="search_mode">Search Mode</string>
+    <string name="search_fuzzy">Mendekati</string>
+    <string name="search_specific">Spesifik</string>
+    <string name="search_history">Riwayat Pencarian</string>
+    <string name="no_results_found">No results found</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %s</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_dark_mode">Dark Mode</string>
+    <string name="settings_coming_soon">Settings feature coming soon</string>
+    
+    <!-- Settings Categories -->
+    <string name="settings_reading">Reading Preferences</string>
+    <string name="settings_audio">Audio Settings</string>
+    <string name="settings_network">Network &amp; Data</string>
+    <string name="settings_data">Data &amp; Storage</string>
+    <string name="settings_other">Other</string>
+    
+    <!-- Reading Settings -->
+    <string name="settings_arabic_font_size">Arabic Font Size</string>
+    <string name="settings_translation_font_size">Translation Font Size</string>
+    <string name="settings_show_transliteration">Show Transliteration</string>
+    <string name="settings_show_transliteration_desc">Display romanized pronunciation</string>
+    <string name="settings_show_bismillah">Show Bismillah</string>
+    <string name="settings_show_bismillah_desc">Show Bismillah at surah start</string>
+    
+    <!-- Audio Settings -->
+    <string name="settings_playback_speed">Playback Speed</string>
+    <string name="settings_auto_scroll">Auto-scroll with Audio</string>
+    <string name="settings_auto_scroll_desc">Scroll automatically during audio playback</string>
+    
+    <!-- Network Settings -->
+    <string name="settings_show_no_internet_modal">No Internet Alert</string>
+    <string name="settings_show_no_internet_modal_desc">Show alert when no internet connection</string>
+    
+    <!-- Theme Settings -->
+    <string name="theme_system">Follow System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="select_theme">Select Theme</string>
+    
+    <!-- Data Settings -->
+    <string name="settings_clear_cache">Clear Cache</string>
+    <string name="settings_clear_cache_desc">Clear all cached data</string>
+    <string name="cache_cleared">Cache cleared successfully</string>
+    
+    <!-- Font Sizes -->
+    <string name="font_size_small">Small</string>
+    <string name="font_size_medium">Medium</string>
+    <string name="font_size_large">Large</string>
+    
+    <!-- Audio Downloads -->
+    <string name="audio_downloads_title">Audio Downloads</string>
+    <string name="audio_manager_title">Audio Manager</string>
+    <string name="audio_manager_subtitle">Manage Quran audio downloads</string>
+    <string name="download_all_audio">Download All Audio</string>
+    <string name="clear_all_audio">Clear All Audio</string>
+    <string name="audio_download_status" formatted="false">Downloaded %1$d of %2$d ayahs (%3$s)</string>
+    <string name="no_audio_downloaded">No audio downloaded yet</string>
+    <string name="checking_downloads">Checking download status...</string>
+    <string name="download_failed">Download failed</string>
+    <string name="audio_cleared">All audio files cleared</string>
+    <string name="clear_audio_failed">Failed to clear audio files</string>
+    <string name="clear_audio_title">Clear All Audio?</string>
+    <string name="clear_audio_message">This will delete all downloaded audio files. You can download them again later.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="download_status">Download Status</string>
+    <string name="download_percentage" formatted="false">%d%%</string>
+    <string name="downloading_in_progress">Downloading in progress...</string>
+    <string name="download_complete_success">Download completed successfully</string>
+    <string name="download_queued">Download queued</string>
+    <string name="clearing_audio">Clearing audio files...</string>
+    <string name="audio_actions">Actions</string>
+    <string name="audio_manager_description">Download all Quran audio for offline playback or clear downloaded files to free up storage space.</string>
+    <string name="audio_info">Information</string>
+    <string name="audio_info_description">Audio files are stored in internal storage. Downloaded audio will play instantly without delay. Total Quran audio size is approximately 200-300 MB.</string>
+    
+    <!-- About -->
+    <string name="about_app">Info Aplikasi</string>
+    <string name="app_description">Aplikasi Al-Quran Digital untuk membaca dan menghafal Al-Quran dengan mudah</string>
+    
+    <!-- Messages -->
+    <string name="loading">Loading...</string>
+    <string name="error_message">Failed to load data</string>
+    <string name="no_connection">No internet connection</string>
+    <string name="try_again">Try Again</string>
+    <string name="empty_data">No data available</string>
+    
+    <!-- Actions -->
+    <string name="share">Share</string>
+    <string name="copy">Copy</string>
+    <string name="play_audio">Play Audio</string>
+    <string name="pause_audio">Pause Audio</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Islamic Green Theme -->
+    <color name="primary">#1B5E20</color>
+    <color name="primary_dark">#003300</color>
+    <color name="primary_light">#4C8C4A</color>
+    <color name="accent">#FFD700</color>
+    
+    <!-- Background Colors -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface_dark">#1E1E1E</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_primary_light">#212121</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_secondary_light">#757575</color>
+    <color name="text_secondary_dark">#B0B0B0</color>
+    
+    <!-- Arabic Text Color -->
+    <color name="arabic_text">#2E7D32</color>
+    
+    <!-- Status Colors -->
+    <color name="error">#B00020</color>
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFC107</color>
+    
+    <!-- Common Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="gray_dark">#424242</color>
+    
+    <!-- Divider -->
+    <color name="divider">#E0E0E0</color>
+    
+    <!-- Favorite -->
+    <color name="favorite">#FFD700</color>
+</resources>

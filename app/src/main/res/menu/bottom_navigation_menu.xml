@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_surah"
+        android:icon="@drawable/ic_quran"
+        android:title="@string/menu_surah" />
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_favorite_border"
+        android:title="@string/menu_favorite" />
+</menu>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_favorite">Favorite</string>
+    <string name="favorite_title">Favorite Surahs</string>
+    <string name="empty_favorite">No favorite surahs yet</string>
+    <string name="empty_favorite_message">Surahs you mark as favorite will appear here</string>
+    <string name="ayah_count_format">%d Ayahs</string>
+</resources>
