@@ -1,3 +1,6 @@
+Picked up _JAVA_OPTIONS: -Xmx3072m
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
 Checking the license for package Android SDK Build-Tools 35 in /home/circleci/android-sdk/licenses
 License for package Android SDK Build-Tools 35 accepted.
 Preparing "Install Android SDK Build-Tools 35 v.35.0.0".
@@ -12,24 +15,36 @@ Preparing "Install Android SDK Platform 36 (revision 2)".
 Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/android-36
 "Install Android SDK Platform 36 (revision 2)" complete.
 "Install Android SDK Platform 36 (revision 2)" finished.
-> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :core:preBuild UP-TO-DATE
 > Task :core:preDebugBuild UP-TO-DATE
-> Task :core:generateDebugResValues
+> Task :core:checkDebugAarMetadata
+> Task :core:mergeDebugJniLibFolders
+> Task :core:mergeDebugNativeLibs NO-SOURCE
+> Task :core:stripDebugDebugSymbols NO-SOURCE
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:copyDebugJniLibsProjectAndLocalJars
 > Task :core:dataBindingMergeDependencyArtifactsDebug
+> Task :core:generateDebugResValues
 > Task :core:generateDebugResources
 > Task :core:packageDebugResources
 > Task :core:processDebugNavigationResources
 > Task :core:generateDebugBuildConfig
+> Task :core:extractDeepLinksForAarDebug
+> Task :core:mergeDebugShaders
+> Task :core:compileDebugShaders NO-SOURCE
+> Task :core:generateDebugAssets UP-TO-DATE
+> Task :core:mergeDebugAssets
 > Task :core:parseDebugLocalResources
 > Task :core:javaPreCompileDebug
 > Task :core:dataBindingGenBaseClassesDebug
-> Task :app:preBuild UP-TO-DATE
-> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :core:writeDebugAarMetadata
+> Task :core:prepareDebugArtProfile
+> Task :core:prepareLintJarForPublish
 > Task :core:generateDebugRFile
-> Task :core:extractDeepLinksDebug
 > Task :core:processDebugManifest
+> Task :core:writeDebugAarMetadata
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :core:extractDeepLinksDebug
 > Task :favorite:preBuild UP-TO-DATE
 > Task :favorite:preDebugBuild UP-TO-DATE
 > Task :favorite:featureDebugWriter
@@ -39,56 +54,66 @@ Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/andro
 > Task :favorite:generateDebugResValues
 > Task :search:generateDebugResValues
 > Task :core:compileDebugLibraryResources
-> Task :core:mergeDebugShaders
-> Task :core:compileDebugShaders NO-SOURCE
-> Task :core:generateDebugAssets UP-TO-DATE
-> Task :core:mergeDebugAssets
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:generateDebugAndroidTestResValues
+> Task :core:writeDebugLintModelMetadata
+> Task :app:extractProguardFiles
+> Task :core:extractProguardFiles
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :core:preDebugAndroidTestBuild UP-TO-DATE
+> Task :core:generateDebugAndroidTestResValues
+> Task :core:preDebugUnitTestBuild UP-TO-DATE
 > Task :favorite:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :favorite:generateDebugResources
 > Task :favorite:packageDebugResources
 > Task :favorite:javaPreCompileDebug
+> Task :favorite:preDebugAndroidTestBuild SKIPPED
+> Task :favorite:generateDebugAndroidTestResValues
+> Task :favorite:extractProguardFiles
+> Task :favorite:preDebugUnitTestBuild UP-TO-DATE
 > Task :search:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :search:generateDebugResources
 > Task :search:packageDebugResources
 > Task :search:javaPreCompileDebug
-> Task :core:mergeDebugJniLibFolders
-> Task :core:mergeDebugNativeLibs NO-SOURCE
-> Task :core:copyDebugJniLibsProjectOnly
-> Task :core:preReleaseBuild UP-TO-DATE
-> Task :core:dataBindingMergeDependencyArtifactsRelease
-> Task :core:generateReleaseResValues
-> Task :core:generateReleaseResources
-> Task :core:packageReleaseResources
-> Task :core:processReleaseNavigationResources
-> Task :core:parseReleaseLocalResources
-> Task :core:dataBindingGenBaseClassesRelease
-> Task :core:generateReleaseBuildConfig
-> Task :core:generateReleaseRFile
-> Task :core:kspReleaseKotlin
+> Task :search:preDebugAndroidTestBuild SKIPPED
+> Task :search:generateDebugAndroidTestResValues
+> Task :search:extractProguardFiles
+> Task :search:preDebugUnitTestBuild UP-TO-DATE
 > Task :core:kspDebugKotlin
-> Task :core:compileReleaseKotlin
 > Task :core:compileDebugKotlin
-> Task :core:javaPreCompileRelease
+> Task :core:extractDebugAnnotations
+
 > Task :core:compileDebugJavaWithJavac
-> Task :core:bundleLibRuntimeToJarDebug
+Picked up _JAVA_OPTIONS: -Xmx3072m
+
+Picked up _JAVA_OPTIONS: -Xmx3072m
+
+Picked up _JAVA_OPTIONS: -Xmx3072m
+
+
+> Task :core:mergeDebugGeneratedProguardFiles
+> Task :core:mergeDebugConsumerProguardFiles
 > Task :core:processDebugJavaRes
+> Task :core:bundleLibRuntimeToJarDebug
 > Task :core:createFullJarDebug
+> Task :core:mergeDebugJavaResource
 > Task :app:generateDebugFeatureTransitiveDeps
+> Task :core:syncDebugLibJars
+> Task :core:bundleDebugLocalLintAar
 > Task :favorite:generateDebugFeatureTransitiveDeps
 > Task :search:generateDebugFeatureTransitiveDeps
 > Task :app:checkDebugLibraries
 > Task :app:preDebugBuild
-> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :app:dataBindingMergeDependencyArtifactsDebug
 > Task :app:generateDebugResValues
 > Task :app:generateDebugResources
-> Task :app:mergeDebugResources
 > Task :app:packageDebugResources
 > Task :app:processDebugNavigationResources
 > Task :app:parseDebugLocalResources
-> Task :app:dataBindingGenBaseClassesDebug
 > Task :app:generateDebugBuildConfig
+> Task :app:mergeDebugResources
 > Task :app:checkDebugAarMetadata
+> Task :app:dataBindingGenBaseClassesDebug
 > Task :app:compileDebugNavigationResources
 > Task :app:mapDebugSourceSetPaths
 > Task :app:createDebugCompatibleScreenManifests
@@ -105,19 +130,25 @@ Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/andro
 > Task :search:copyDebugMergedManifest
 > Task :search:processApplicationManifestDebugForBundle
 > Task :search:processManifestDebugForFeature
+> Task :core:bundleLibCompileToJarDebug
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
-> Task :app:processDebugManifestForPackage
-> Task :core:bundleLibCompileToJarDebug
 > Task :app:javaPreCompileDebug
-> Task :app:mergeDebugShaders
-> Task :app:compileDebugShaders NO-SOURCE
-> Task :app:generateDebugAssets UP-TO-DATE
-> Task :app:mergeDebugAssets
-> Task :app:compressDebugAssets
+> Task :core:generateDebugLintModel
+> Task :app:processDebugManifestForPackage
 > Task :app:processDebugResources
-> Task :app:desugarDebugFileDependencies
-> Task :favorite:desugarDebugFileDependencies
+> Task :app:compileDebugKotlin
+> Task :app:compileDebugJavaWithJavac
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :core:generateDebugAndroidTestLintModel
+> Task :core:generateDebugUnitTestLintModel
+> Task :core:lintAnalyzeDebugAndroidTest
+> Task :core:lintAnalyzeDebugUnitTest
 > Task :favorite:dataBindingMergeDependencyArtifactsDebug
 > Task :favorite:mergeDebugResources
 > Task :favorite:processDebugNavigationResources
@@ -128,7 +159,15 @@ Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/andro
 > Task :favorite:mapDebugSourceSetPaths
 > Task :favorite:processDebugManifestForPackage
 > Task :favorite:processDebugResources
-> Task :search:desugarDebugFileDependencies
+> Task :favorite:compileDebugKotlin
+> Task :favorite:compileDebugJavaWithJavac
+> Task :favorite:bundleDebugClassesToCompileJar
+> Task :favorite:generateDebugAndroidTestLintModel
+> Task :app:generateDebugLintModel
+> Task :favorite:generateDebugLintModel
+> Task :favorite:generateDebugUnitTestLintModel
+> Task :favorite:lintAnalyzeDebugAndroidTest
+> Task :favorite:lintAnalyzeDebugUnitTest
 > Task :search:dataBindingMergeDependencyArtifactsDebug
 > Task :search:mergeDebugResources
 > Task :search:processDebugNavigationResources
@@ -139,178 +178,87 @@ Installing Android SDK Platform 36 in /home/circleci/android-sdk/platforms/andro
 > Task :search:mapDebugSourceSetPaths
 > Task :search:processDebugManifestForPackage
 > Task :search:processDebugResources
-> Task :app:checkDebugDuplicateClasses
-> Task :app:compileDebugKotlin
-> Task :app:mergeExtDexDebug
-> Task :app:compileDebugJavaWithJavac
-> Task :app:dexBuilderDebug
-> Task :app:bundleDebugClassesToRuntimeJar
-> Task :app:bundleDebugClassesToCompileJar
-> Task :favorite:compileDebugKotlin
-> Task :favorite:compileDebugJavaWithJavac
-> Task :favorite:dexBuilderDebug
-> Task :favorite:featureGlobalSyntheticsDebugMerge
-> Task :app:processDebugJavaRes
-> Task :app:mergeDebugJavaResource
-> Task :app:mergeLibDexDebug
-> Task :app:mergeProjectDexDebug
-> Task :app:mergeDebugJniLibFolders
-> Task :app:mergeDebugNativeLibs
-
-> Task :app:stripDebugDebugSymbols
-Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
-
 > Task :search:compileDebugKotlin
-> Task :app:validateSigningDebug
 > Task :search:compileDebugJavaWithJavac
-> Task :search:dexBuilderDebug
-> Task :search:featureGlobalSyntheticsDebugMerge
-> Task :app:writeDebugAppMetadata
-> Task :app:mergeDebugGlobalSynthetics
-> Task :app:writeDebugSigningConfigVersions
-> Task :core:compileReleaseJavaWithJavac
-> Task :core:extractProguardFiles
-> Task :core:processReleaseManifest
-> Task :core:generateReleaseLibraryProguardRules
-> Task :core:mergeReleaseGeneratedProguardFiles
-> Task :core:processReleaseJavaRes
-> Task :core:mergeReleaseJavaResource
-> Task :app:packageDebug
-> Task :app:createDebugApkListingFileRedirect
-> Task :app:assembleDebug
-> Task :core:mergeReleaseJniLibFolders
-> Task :core:mergeReleaseNativeLibs NO-SOURCE
-> Task :core:copyReleaseJniLibsProjectOnly
-> Task :favorite:preReleaseBuild UP-TO-DATE
-> Task :favorite:mergeReleaseJniLibFolders
-> Task :search:preReleaseBuild UP-TO-DATE
-> Task :search:mergeReleaseJniLibFolders
-> Task :core:exportReleaseConsumerProguardFiles
-> Task :favorite:extractProguardFiles
-> Task :app:buildKotlinToolingMetadata
-> Task :core:writeReleaseAarMetadata
-> Task :core:extractDeepLinksRelease
-> Task :favorite:featureReleaseWriter
-> Task :search:featureReleaseWriter
-> Task :favorite:generateReleaseResValues
-> Task :search:generateReleaseResValues
-> Task :core:compileReleaseLibraryResources
-> Task :core:bundleLibCompileToJarRelease
-> Task :favorite:generateReleaseResources
-> Task :favorite:packageReleaseResources
-> Task :favorite:javaPreCompileRelease
-> Task :search:extractProguardFiles
-> Task :search:generateReleaseResources
-> Task :search:packageReleaseResources
-> Task :search:javaPreCompileRelease
-> Task :core:prepareReleaseArtProfile
-> Task :app:extractProguardFiles
-> Task :core:mergeReleaseShaders
-> Task :core:compileReleaseShaders NO-SOURCE
-> Task :core:generateReleaseAssets UP-TO-DATE
-> Task :core:mergeReleaseAssets
-> Task :core:generateReleaseLintModel
-> Task :core:prepareLintJarForPublish
-> Task :core:checkReleaseAarMetadata
-> Task :core:stripReleaseDebugSymbols NO-SOURCE
-> Task :core:copyReleaseJniLibsProjectAndLocalJars
-> Task :core:extractDeepLinksForAarRelease
-> Task :core:minifyReleaseWithR8
-> Task :core:extractReleaseAnnotations
-> Task :core:bundleLibRuntimeToJarRelease
-> Task :core:mergeReleaseConsumerProguardFiles
-> Task :core:createFullJarRelease
-> Task :app:generateReleaseFeatureTransitiveDeps
-> Task :favorite:generateReleaseFeatureTransitiveDeps
-> Task :search:generateReleaseFeatureTransitiveDeps
-> Task :app:checkReleaseLibraries
-> Task :app:preReleaseBuild
-> Task :app:mergeReleaseJniLibFolders
-> Task :app:mergeReleaseNativeLibs
+> Task :search:bundleDebugClassesToCompileJar
+> Task :search:generateDebugAndroidTestLintModel
+> Task :search:generateDebugLintModel
+> Task :search:generateDebugUnitTestLintModel
+> Task :search:lintAnalyzeDebugAndroidTest
+> Task :search:lintAnalyzeDebugUnitTest
+> Task :core:generateDebugLintReportModel
+> Task :core:lintAnalyzeDebug
+> Task :favorite:lintAnalyzeDebug
+> Task :search:lintAnalyzeDebug
 
-> Task :app:stripReleaseDebugSymbols
-Unable to strip the following libraries, packaging them as they are: libdatastore_shared_counter.so. Run with --info option to learn more.
+> Task :core:lintReportDebug
+Wrote HTML report to file:///home/circleci/project/core/build/reports/lint-results-debug.html
 
-> Task :app:extractReleaseNativeSymbolTables
-> Task :favorite:mergeReleaseNativeLibs NO-SOURCE
-> Task :favorite:stripReleaseDebugSymbols NO-SOURCE
-> Task :favorite:extractReleaseNativeSymbolTables NO-SOURCE
-> Task :search:mergeReleaseNativeLibs NO-SOURCE
-> Task :search:stripReleaseDebugSymbols NO-SOURCE
-> Task :search:extractReleaseNativeSymbolTables NO-SOURCE
-> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
-> Task :app:writeReleaseModuleMetadata
-> Task :app:dataBindingMergeDependencyArtifactsRelease
-> Task :app:generateReleaseResValues
-> Task :app:generateReleaseResources
-> Task :app:processReleaseNavigationResources
-> Task :app:generateReleaseBuildConfig
-> Task :app:checkReleaseAarMetadata
-> Task :app:mapReleaseSourceSetPaths
-> Task :app:createReleaseCompatibleScreenManifests
-> Task :app:extractDeepLinksRelease
-> Task :app:generateReleaseFeatureMetadata
-> Task :favorite:extractDeepLinksRelease
-> Task :favorite:processReleaseMainManifest
-> Task :favorite:copyReleaseMergedManifest
-> Task :favorite:processApplicationManifestReleaseForBundle
-> Task :favorite:processManifestReleaseForFeature
-> Task :search:extractDeepLinksRelease
-> Task :search:processReleaseMainManifest
-> Task :search:copyReleaseMergedManifest
-> Task :search:processApplicationManifestReleaseForBundle
-> Task :search:processManifestReleaseForFeature
-> Task :app:processReleaseMainManifest
-> Task :app:processReleaseManifest
-> Task :app:processReleaseManifestForPackage
-> Task :app:javaPreCompileRelease
-> Task :favorite:dataBindingMergeDependencyArtifactsRelease
-> Task :favorite:processReleaseNavigationResources
-> Task :favorite:parseReleaseLocalResources
-> Task :favorite:checkReleaseAarMetadata
-> Task :favorite:mapReleaseSourceSetPaths
-> Task :favorite:processReleaseManifestForPackage
-> Task :search:dataBindingMergeDependencyArtifactsRelease
-> Task :search:processReleaseNavigationResources
-> Task :search:parseReleaseLocalResources
-> Task :search:checkReleaseAarMetadata
-> Task :search:mapReleaseSourceSetPaths
-> Task :search:processReleaseManifestForPackage
-> Task :app:checkReleaseDuplicateClasses
-> Task :app:mergeReleaseArtProfile
-> Task :app:mergeReleaseStartupProfile
-> Task :app:mergeReleaseShaders
-> Task :app:compileReleaseShaders NO-SOURCE
-> Task :app:generateReleaseAssets UP-TO-DATE
-> Task :app:mergeReleaseAssets
-> Task :app:compressReleaseAssets
-> Task :app:mergeReleaseResources
-> Task :app:extractReleaseVersionControlInfo
-> Task :app:packageReleaseResources
-> Task :app:compileReleaseNavigationResources
-> Task :app:parseReleaseLocalResources
-> Task :favorite:mergeReleaseResources
-> Task :app:dataBindingGenBaseClassesRelease
-> Task :core:syncReleaseLibJars
-> Task :core:bundleReleaseLocalLintAar
-> Task :app:processReleaseResources
-> Task :app:compileReleaseKotlin
-> Task :app:compileReleaseJavaWithJavac
-> Task :app:bundleReleaseClassesToCompileJar
-> Task :favorite:dataBindingGenBaseClassesRelease
-> Task :favorite:compileReleaseNavigationResources
-> Task :favorite:processReleaseResources
-> Task :favorite:compileReleaseKotlin
-> Task :favorite:compileReleaseJavaWithJavac
-> Task :favorite:mergeReleaseGeneratedProguardFiles
-> Task :favorite:exportReleaseConsumerProguardFiles FAILED
-> Task :core:lintVitalAnalyzeRelease
+> Task :core:lintDebug
+> Task :core:lint
+> Task :app:lintAnalyzeDebug
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///home/circleci/project/app/build/reports/lint-results-debug.html
+Lint found 1 error and 112 warnings. First failure:
+/home/circleci/project/app/src/main/AndroidManifest.xml:32: Error: Class referenced in the manifest, com.myquranapp.ui.search.SearchActivity, was not found in the project or the libraries [MissingClass]
+            android:name=".ui.search.SearchActivity"
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+> Task :app:lintDebug FAILED
+Lint found 1 error, 112 warnings. First failure:
+
+/home/circleci/project/app/src/main/AndroidManifest.xml:32: Error: Class referenced in the manifest, com.myquranapp.ui.search.SearchActivity, was not found in the project or the libraries [MissingClass]
+            android:name=".ui.search.SearchActivity"
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "MissingClass":
+   If a class is referenced in the manifest or in a layout file, it must also
+   exist in the project (or in one of the libraries included by the project.
+   This check helps uncover typos in registration names, or attempts to rename
+   or move classes without updating the XML references properly.
+
+   https://developer.android.com/guide/topics/manifest/manifest-intro.html
+
+
+The full lint text report is located at:
+  /home/circleci/project/app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed for task ':favorite:exportReleaseConsumerProguardFiles'.
-> Default file proguard-android-optimize.txt should not be specified in this module. It can be specified in the base module instead.
+Execution failed for task ':app:lintDebug'.
+> Lint found errors in the project; aborting build.
+  
+  Fix the issues identified by lint, or create a baseline to see only new errors.
+  To create a baseline, run `gradlew updateLintBaseline` after adding the following to the module's build.gradle file:
+  ```
+  android {
+      lint {
+          baseline = file("lint-baseline.xml")
+      }
+  }
+  ```
+  For more details, see https://developer.android.com/studio/write/lint#snapshot
+  
+  Lint found 1 error, 112 warnings. First failure:
+  
+  /home/circleci/project/app/src/main/AndroidManifest.xml:32: Error: Class referenced in the manifest, com.myquranapp.ui.search.SearchActivity, was not found in the project or the libraries [MissingClass]
+              android:name=".ui.search.SearchActivity"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+     Explanation for issues of type "MissingClass":
+     If a class is referenced in the manifest or in a layout file, it must also
+     exist in the project (or in one of the libraries included by the project.
+     This check helps uncover typos in registration names, or attempts to rename
+     or move classes without updating the XML references properly.
+  
+     https://developer.android.com/guide/topics/manifest/manifest-intro.html
+  
+  
+  The full lint text report is located at:
+    /home/circleci/project/app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -318,5 +266,7 @@ Execution failed for task ':favorite:exportReleaseConsumerProguardFiles'.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 3m 46s
-253 actionable tasks: 253 executed
+BUILD FAILED in 1m 46s
+149 actionable tasks: 149 executed
+
+Exited with code exit status 1

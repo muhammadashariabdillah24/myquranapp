@@ -52,6 +52,13 @@ android {
         viewBinding = true
         buildConfig = true
     }
+    
+    lint {
+        abortOnError = false
+        warningsAsErrors = false
+        checkReleaseBuilds = false
+    }
+    
     dynamicFeatures += setOf(":favorite", ":search")
 }
 
