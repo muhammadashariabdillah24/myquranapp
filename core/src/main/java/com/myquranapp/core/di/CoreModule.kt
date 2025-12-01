@@ -1,10 +1,9 @@
 package com.myquranapp.core.di
 
-import androidx.room.Room
 import com.myquranapp.core.data.QuranRepository
 import com.myquranapp.core.data.SettingsRepository
 import com.myquranapp.core.data.source.local.LocalDataSource
-import com.myquranapp.core.data.source.local.SettingsDataStore
+import com.myquranapp.core.data.source.local.EncryptedSettingsPreferences
 import com.myquranapp.core.data.source.local.room.QuranDatabase
 import com.myquranapp.core.data.source.remote.RemoteDataSource
 import com.myquranapp.core.data.source.remote.network.ApiService
@@ -13,7 +12,8 @@ import com.myquranapp.core.domain.repository.ISettingsRepository
 import com.myquranapp.core.domain.usecase.QuranInteractor
 import com.myquranapp.core.domain.usecase.QuranUseCase
 import com.myquranapp.core.domain.usecase.SettingsUseCase
-import com.myquranapp.core.utils.AudioManager
+import com.myquranapp.core.utils.CertificatePinner
+import com.myquranapp.core.utils.DatabaseEncryption
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -24,14 +24,12 @@ import java.util.concurrent.TimeUnit
 
 val databaseModule = module {
     single {
-        Room.databaseBuilder(
-            androidContext(),
-            QuranDatabase::class.java,
-            "Quran.db"
-        ).fallbackToDestructiveMigration().build()
+        // Initialize SQLCipher
+        DatabaseEncryption.initSQLCipher(androidContext())
+        // Build encrypted database
+        DatabaseEncryption.buildEncryptedDatabase(androidContext())
     }
     single { get<QuranDatabase>().surahDao() }
-    single { get<QuranDatabase>().audioDownloadDao() }
 }
 
 val networkModule = module {
@@ -44,6 +42,7 @@ val networkModule = module {
         
         OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
+            .certificatePinner(CertificatePinner.getCertificatePinner())
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
@@ -63,7 +62,7 @@ val networkModule = module {
 val repositoryModule = module {
     single { LocalDataSource(get()) }
     single { RemoteDataSource(get()) }
-    single { SettingsDataStore(androidContext()) }
+    single { EncryptedSettingsPreferences(androidContext()) }
     single<IQuranRepository> {
         QuranRepository(
             get(),
@@ -78,5 +77,4 @@ val repositoryModule = module {
 val useCaseModule = module {
     factory<QuranUseCase> { QuranInteractor(get()) }
     factory { SettingsUseCase(get()) }
-    single { AudioManager(androidContext(), get()) }
 }

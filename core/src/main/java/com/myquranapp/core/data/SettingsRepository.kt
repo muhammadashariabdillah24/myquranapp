@@ -1,51 +1,51 @@
 package com.myquranapp.core.data
 
-import com.myquranapp.core.data.source.local.SettingsDataStore
+import com.myquranapp.core.data.source.local.EncryptedSettingsPreferences
 import com.myquranapp.core.domain.model.AppSettings
 import com.myquranapp.core.domain.repository.ISettingsRepository
 import kotlinx.coroutines.flow.Flow
 
 class SettingsRepository(
-    private val settingsDataStore: SettingsDataStore
+    private val encryptedSettingsPreferences: EncryptedSettingsPreferences
 ) : ISettingsRepository {
     
     override fun getSettings(): Flow<AppSettings> {
-        return settingsDataStore.getSettings()
+        return encryptedSettingsPreferences.getSettings()
     }
     
     override suspend fun updateArabicFontSize(size: Int) {
-        settingsDataStore.updateArabicFontSize(size)
+        encryptedSettingsPreferences.updateArabicFontSize(size)
     }
     
     override suspend fun updateTranslationFontSize(size: Int) {
-        settingsDataStore.updateTranslationFontSize(size)
+        encryptedSettingsPreferences.updateTranslationFontSize(size)
     }
     
     override suspend fun updateShowTransliteration(show: Boolean) {
-        settingsDataStore.updateShowTransliteration(show)
+        encryptedSettingsPreferences.updateShowTransliteration(show)
     }
     
     override suspend fun updateShowBismillah(show: Boolean) {
-        settingsDataStore.updateShowBismillah(show)
+        encryptedSettingsPreferences.updateShowBismillah(show)
     }
     
     override suspend fun updateTheme(theme: String) {
-        settingsDataStore.updateThemeMode(theme)
+        encryptedSettingsPreferences.updateThemeMode(theme)
     }
     
     override suspend fun updatePlaybackSpeed(speed: Float) {
-        settingsDataStore.updatePlaybackSpeed(speed)
+        encryptedSettingsPreferences.updatePlaybackSpeed(speed)
     }
     
     override suspend fun updateAutoScrollWithAudio(enabled: Boolean) {
-        settingsDataStore.updateAutoScrollWithAudio(enabled)
+        encryptedSettingsPreferences.updateAutoScrollWithAudio(enabled)
     }
     
     override suspend fun updateShowNoInternetModal(show: Boolean) {
-        settingsDataStore.updateShowNoInternetModal(show)
+        encryptedSettingsPreferences.updateShowNoInternetModal(show)
     }
     
     override suspend fun clearAllSettings() {
-        settingsDataStore.clearAll()
+        encryptedSettingsPreferences.clearAll()
     }
 }

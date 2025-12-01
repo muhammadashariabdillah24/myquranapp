@@ -24,7 +24,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding
 
     private val viewModel: HomeViewModel by viewModel()
     private lateinit var adapter: SurahAdapter
@@ -33,9 +33,9 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
+        return _binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -82,7 +82,7 @@ class HomeFragment : Fragment() {
             }
         )
 
-        binding.rvSurah.apply {
+        binding?.rvSurah?.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@HomeFragment.adapter
             setHasFixedSize(true)
@@ -90,11 +90,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupSwipeRefresh() {
-        binding.swipeRefresh.setOnRefreshListener {
+        binding?.swipeRefresh?.setOnRefreshListener {
             viewModel.loadSurahs()
         }
         
-        binding.swipeRefresh.setColorSchemeResources(
+        binding?.swipeRefresh?.setColorSchemeResources(
             R.color.primary,
             R.color.primary_dark,
             R.color.accent
@@ -137,11 +137,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun showLoading(isLoading: Boolean) {
-        binding.swipeRefresh.isRefreshing = isLoading
+        binding?.swipeRefresh?.isRefreshing = isLoading
     }
 
     private fun showError(isError: Boolean, message: String? = null) {
-        binding.apply {
+        binding?.apply {
             if (isError) {
                 tvError.visibility = View.VISIBLE
                 tvError.text = message ?: getString(R.string.error_message)
@@ -154,7 +154,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun showEmptyState(isEmpty: Boolean) {
-        binding.apply {
+        binding?.apply {
             if (isEmpty) {
                 tvEmptyState.visibility = View.VISIBLE
                 rvSurah.visibility = View.GONE

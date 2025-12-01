@@ -19,7 +19,7 @@ interface SurahDao {
     @Query("SELECT * FROM surah WHERE name_latin_short LIKE '%' || :query || '%' OR name_arabic_short LIKE '%' || :query || '%' OR translation LIKE '%' || :query || '%'")
     fun searchSurahs(query: String): Flow<List<SurahEntity>>
     
-    @Query("SELECT is_favorite FROM surah WHERE sequence = :surahNumber")
+    @Query("SELECT COALESCE(is_favorite, 0) FROM surah WHERE sequence = :surahNumber")
     fun isSurahFavorite(surahNumber: Int): Flow<Boolean>
     
     @Query("SELECT is_favorite FROM surah WHERE sequence = :surahNumber")

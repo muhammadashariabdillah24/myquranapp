@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.myquranapp.core.domain.model.Surah
 import com.myquranapp.core.domain.model.SurahDetail
 import com.myquranapp.core.domain.usecase.QuranUseCase
-import com.myquranapp.core.utils.AudioManager
 import com.myquranapp.core.utils.Resource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,8 +14,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class DetailViewModel(
-    private val quranUseCase: QuranUseCase,
-    private val audioManager: AudioManager
+    private val quranUseCase: QuranUseCase
 ) : ViewModel() {
 
     private val _surahDetailState = MutableStateFlow<Resource<SurahDetail>>(Resource.Loading)
@@ -48,12 +46,15 @@ class DetailViewModel(
                             translation = detail.translation,
                             recitationAudio = detail.recitationAudio
                         )
+                        // Check favorite status after loading surah
+                        checkFavoriteStatus(surahNumber)
                     }
                 }
             }
         }
-        
-        // Check if surah is favorite
+    }
+    
+    private fun checkFavoriteStatus(surahNumber: Int) {
         viewModelScope.launch {
             quranUseCase.isSurahFavorite(surahNumber).collect { isFav ->
                 _isFavorite.value = isFav
@@ -76,9 +77,6 @@ class DetailViewModel(
                 // Stop previous audio if playing
                 stopAudio()
 
-                // Get local file path if downloaded, otherwise use remote URL
-                val audioPath = audioManager.getAudioPath(audioUrl)
-
                 // Create new MediaPlayer
                 mediaPlayer = MediaPlayer().apply {
                     setAudioAttributes(
@@ -87,7 +85,7 @@ class DetailViewModel(
                             .setUsage(AudioAttributes.USAGE_MEDIA)
                             .build()
                     )
-                    setDataSource(audioPath)
+                    setDataSource(audioUrl)
                     prepareAsync()
                     
                     setOnPreparedListener {

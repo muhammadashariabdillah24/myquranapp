@@ -62,8 +62,14 @@ dependencies {
     api(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     
+    // SQLCipher for database encryption
+    api(libs.sqlcipher)
+    
     // DataStore
     api(libs.androidx.datastore.preferences)
+    
+    // Security - Encrypted SharedPreferences
+    api(libs.androidx.security.crypto)
 
     // Coroutines
     api(libs.kotlinx.coroutines.core)

@@ -23,6 +23,8 @@ koin = "3.5.6"
 # Database
 room = "2.6.1"
 datastore = "1.1.1"
+sqlcipher = "4.5.4"
+security = "1.1.0-alpha06"
 
 # Coroutines
 coroutines = "1.9.0"
@@ -71,8 +73,14 @@ androidx-room-runtime = { group = "androidx.room", name = "room-runtime", versio
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 
+# SQLCipher for database encryption
+sqlcipher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sqlcipher" }
+
 # DataStore
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+
+# Security - Encrypted SharedPreferences
+androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "security" }
 
 # Coroutines
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }

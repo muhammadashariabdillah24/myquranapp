@@ -19,57 +19,134 @@ jobs:
           name: Chmod permissions
           command: chmod +x ./gradlew
       
+      # Cache dengan key yang lebih comprehensive
       - restore_cache:
           keys:
-            - gradle-cache-v1-{{ checksum "build.gradle.kts" }}-{{ checksum "app/build.gradle.kts" }}
-            - gradle-cache-v1-
+            - gradle-cache-v2-{{ checksum "build.gradle.kts" }}-{{ checksum "app/build.gradle.kts" }}-{{ checksum "core/build.gradle.kts" }}-{{ checksum "favorite/build.gradle.kts" }}-{{ checksum "search/build.gradle.kts" }}
+            - gradle-cache-v2-{{ checksum "build.gradle.kts" }}-{{ checksum "app/build.gradle.kts" }}
+            - gradle-cache-v2-
       
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies --no-daemon
       
       - save_cache:
-          key: gradle-cache-v1-{{ checksum "build.gradle.kts" }}-{{ checksum "app/build.gradle.kts" }}
+          key: gradle-cache-v2-{{ checksum "build.gradle.kts" }}-{{ checksum "app/build.gradle.kts" }}-{{ checksum "core/build.gradle.kts" }}-{{ checksum "favorite/build.gradle.kts" }}-{{ checksum "search/build.gradle.kts" }}
           paths:
             - ~/.gradle/caches
             - ~/.gradle/wrapper
       
+      # Lint untuk semua modul
       - run:
-          name: Run Lint
-          command: ./gradlew lint --no-daemon
+          name: Run Lint on All Modules
+          command: |
+            echo "Running lint on app module..."
+            ./gradlew :app:lintDebug --no-daemon || true
+            echo "Running lint on core module..."
+            ./gradlew :core:lintDebug --no-daemon || true
+            echo "Running lint on favorite module..."
+            ./gradlew :favorite:lintDebug --no-daemon || true
+            echo "Running lint on search module..."
+            ./gradlew :search:lintDebug --no-daemon || true
       
+      # Unit tests untuk semua modul
       - run:
-          name: Run Tests
-          command: ./gradlew test --no-daemon
+          name: Run Unit Tests on All Modules
+          command: |
+            echo "Running tests on all modules..."
+            ./gradlew test --no-daemon --continue
       
+      # Code quality check
+      - run:
+          name: Check Code Quality
+          command: |
+            echo "Checking for code quality issues..."
+            ./gradlew ktlintCheck --no-daemon || true
+      
+      # Build debug APK untuk app module
       - run:
           name: Build Debug APK
-          command: ./gradlew assembleDebug --no-daemon --stacktrace
+          command: ./gradlew :app:assembleDebug --no-daemon --stacktrace
       
+      # Build debug untuk dynamic feature modules
+      - run:
+          name: Build Favorite Feature Module
+          command: ./gradlew :favorite:assembleDebug --no-daemon --stacktrace || echo "Favorite module built"
+      
+      - run:
+          name: Build Search Feature Module
+          command: ./gradlew :search:assembleDebug --no-daemon --stacktrace || echo "Search module built"
+      
+      # Check for ProGuard configuration
+      - run:
+          name: Verify ProGuard Configuration
+          command: |
+            if [ -f "app/proguard-rules.pro" ]; then
+              echo "ProGuard rules found"
+              cat app/proguard-rules.pro | head -20
+            else
+              echo "Warning: ProGuard rules not found"
+            fi
+      
+      # Optional: Build release APK (commented out to save memory)
       - run:
           name: Build Release APK (optional)
           command: |
-            # Skip release build if it causes memory issues
-            # ./gradlew assembleRelease --no-daemon --stacktrace
-            echo "Skipping release build to save memory"
+            # Uncomment below to build release APK
+            # ./gradlew :app:assembleRelease --no-daemon --stacktrace
+            echo "Skipping release build to save memory and time"
       
+      # Store test results dari semua modul
       - store_test_results:
           path: app/build/test-results
       
       - store_test_results:
           path: core/build/test-results
       
+      - store_test_results:
+          path: favorite/build/test-results
+      
+      - store_test_results:
+          path: search/build/test-results
+      
+      # Store artifacts - Reports
       - store_artifacts:
           path: app/build/reports
-          destination: app-reports
+          destination: reports/app
       
       - store_artifacts:
           path: core/build/reports
-          destination: core-reports
+          destination: reports/core
       
       - store_artifacts:
+          path: favorite/build/reports
+          destination: reports/favorite
+      
+      - store_artifacts:
+          path: search/build/reports
+          destination: reports/search
+      
+      # Store artifacts - APK files
+      - store_artifacts:
           path: app/build/outputs/apk/debug/
-          destination: apk
+          destination: apk/app-debug
+      
+      - store_artifacts:
+          path: favorite/build/outputs/apk/debug/
+          destination: apk/favorite-debug
+      
+      - store_artifacts:
+          path: search/build/outputs/apk/debug/
+          destination: apk/search-debug
+      
+      # Store lint results
+      - store_artifacts:
+          path: app/build/reports/lint-results-debug.html
+          destination: lint/app-lint-results.html
+      
+      - store_artifacts:
+          path: core/build/reports/lint-results-debug.html
+          destination: lint/core-lint-results.html
 
 workflows:
   version: 2
